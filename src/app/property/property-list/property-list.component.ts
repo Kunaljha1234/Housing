@@ -11,10 +11,10 @@ export class PropertyListComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.http.get('data/properties.json').subscribe(
-      data =>{
-        this.properties=data;
+      data=>{
+        this.properties = data;
         console.log(data);
       }
     );
