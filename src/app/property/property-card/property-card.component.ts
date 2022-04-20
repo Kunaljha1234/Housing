@@ -13,7 +13,7 @@ import { ɵshimHostAttribute } from "@angular/platform-browser";
 export class PropertyCardComponent {
   Property: any = {
     "Id":1,
-    "Name": "Kunal's house",
+    "Name": "Kunal's",
     "Type": "House",
     "Price": 1200
   }
