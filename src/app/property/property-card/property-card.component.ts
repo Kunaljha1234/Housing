@@ -1,5 +1,6 @@
 import { Template } from "@angular/compiler/src/render3/r3_ast";
 import { Component } from "@angular/core";
+import { ɵshimHostAttribute } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-property-card',
@@ -10,5 +11,10 @@ import { Component } from "@angular/core";
 }
 )
 export class PropertyCardComponent {
-
+  Property: any = {
+    "Id":1,
+    "Name": "Kunal's house",
+    "Type": "House",
+    "Price": 1200
+  }
 }
