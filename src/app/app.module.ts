@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
   {path: 'rent-property', component: RentPropertyComponent},
-  {path: 'property-detail', component: PropertyDetailComponent}
+  {path: 'property-detail/:id', component: PropertyDetailComponent}
 ]
 
 @NgModule({
