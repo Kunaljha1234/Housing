@@ -9,6 +9,15 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { NavBarComponent } from './property/nav-bar/nav-bar.component';
 import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { RentPropertyComponent } from './property/rent-property/rent-property.component';
+import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
+
+const appRoutes: Routes = [
+  {path: '', component: PropertyListComponent},
+  {path: 'add-property', component: AddPropertyComponent},
+  {path: 'rent-property', component: RentPropertyComponent},
+  {path: 'property-detail', component: PropertyDetailComponent}
+]
 
 @NgModule({
   declarations: [
@@ -16,11 +25,14 @@ import { AddPropertyComponent } from './property/add-property/add-property.compo
     PropertyCardComponent,
     PropertyListComponent,
     NavBarComponent,
-    AddPropertyComponent
+    AddPropertyComponent,
+    RentPropertyComponent,
+    PropertyDetailComponent
    ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     HousingService
