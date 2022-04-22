@@ -1,6 +1,7 @@
 import { Template } from "@angular/compiler/src/render3/r3_ast";
 import { Component, Input } from "@angular/core";
 import { ɵshimHostAttribute } from "@angular/platform-browser";
+import { IProperty } from "../IProperty";
 
 @Component({
   selector: 'app-property-card',
@@ -11,6 +12,6 @@ import { ɵshimHostAttribute } from "@angular/platform-browser";
 }
 )
 export class PropertyCardComponent {
-  @Input() property: any
+  @Input() property: IProperty
 
 }
