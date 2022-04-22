@@ -11,27 +11,31 @@
   "Name": "Aakash's",
   "SellRent": 1,
   "Type": "House",
-  "Price": 1340
+  "Price": 1340,
+  "Image": "prop-2"
 },
 {
   "Id":3,
   "Name": "Vaibhav's",
   "SellRent": 2,
   "Type": "House",
-  "Price": 2200
+  "Price": 2200,
+  "Image": "prop-3"
 },
 {
   "Id":4,
   "Name": "Pratyush's",
   "SellRent": 2,
   "Type": "House",
-  "Price": 1034
+  "Price": 1034,
+  "Image": "prop-4"
 },
 {
   "Id":5,
   "Name": "Anil's",
   "SellRent": 1,
   "Type": "House",
-  "Price": 1800
+  "Price": 1800,
+  "Image": "prop-5"
 }
 ]
