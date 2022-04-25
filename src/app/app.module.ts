@@ -12,12 +12,16 @@ import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { RentPropertyComponent } from './property/rent-property/rent-property.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
+import { UserLoginComponent } from 'src/user/login/user-login/user-login.component';
+import { UserRegistrationComponent } from 'src/user/registration/user-registration/user-registration.component';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
   {path: 'rent-property', component: PropertyListComponent},
   {path: 'property-detail/:id', component: PropertyDetailComponent},
+  {path: 'user/login', component: UserLoginComponent},
+  {path: 'user/registration', component: UserRegistrationComponent},
   {path: '**', component: PropertyListComponent}
 ]
 
@@ -29,7 +33,9 @@ const appRoutes: Routes = [
     NavBarComponent,
     AddPropertyComponent,
     RentPropertyComponent,
-    PropertyDetailComponent
+    PropertyDetailComponent,
+    UserLoginComponent,
+    UserRegistrationComponent
    ],
   imports: [
     BrowserModule,
