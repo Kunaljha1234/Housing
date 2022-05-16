@@ -9,27 +9,62 @@
         <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="userName">
-            <span class="error-block" *ngIf = "!registrationForm.get('userName').valid && registrationForm.get('userName').touched">Please provide name</span>
+            <span *ngIf="!userName.valid && userName.touched" class="error-block">
+              Provide username
+            </span>
         </div>
 
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control" formControlName="email">
+          <span *ngIf="!email.valid && email.touched" class="error-block">
+            <span *ngIf="email.hasError('required')">
+              Provide an email
+            </span>
+            <span *ngIf="email.hasError('email')">
+              Provide an valid email
+            </span>
+          </span>
         </div>
 
         <div class="form-group col-12">
           <label for="passwrod" class="form-label">Password</label>
-          <input type="password" class="form-control" formControlName="password">
+          <input type="text" class="form-control" formControlName="password">
+          <span *ngIf="!password.valid && password.touched" class="error-block">
+            <span *ngIf="password.errors['required']">
+              Please provide password
+            </span>
+            <span *ngIf="password.hasError('minlength')">
+              Password must be 8 characters long
+            </span>
+          </span>
         </div>
 
         <div class="form-group col-12">
           <label for="cpassword" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" formControlName="cpassword">
+          <input type="text" class="form-control" formControlName="cpassword">
+          <span *ngIf="!cpassword.valid && cpassword.touched" class="error-block">
+            <span *ngIf="cpassword.hasError('required')">
+              Please confirm Password
+            </span>
+          </span>
+            <span *ngIf="registrationForm.hasError('notmatched') && cpassword.valid" class="error-block">
+              Password not matched
+            </span>
+
         </div>
 
         <div class="form-group col-12">
           <label for="mobile" class="form-label">Mobile</label>
           <input type="text" class="form-control" formControlName="mobile">
+          <span *ngIf="!mobile.valid && mobile.touched" class="error-block">
+            <span *ngIf="mobile.hasError('required')">
+              Enter mobile number
+            </span>
+            <span *ngIf="mobile.hasError('maxlength')">
+              Enter a valid mobile number
+            </span>
+          </span>
         </div>
 
         <div class="form-group col-12">
