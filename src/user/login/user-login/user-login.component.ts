@@ -11,5 +11,9 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  onLogin(LoginForm){
+
+
+  }
 
 }
