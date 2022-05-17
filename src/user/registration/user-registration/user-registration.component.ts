@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -10,7 +11,8 @@ export class UserRegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
   user: any = {};
-  constructor() { }
+  userSubmitted: boolean;
+  constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
     this.registrationForm = new FormGroup({
@@ -48,19 +50,14 @@ export class UserRegistrationComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.registrationForm.value);
-    this.user = Object.assign(this.user, this.registrationForm.value);
-    this.addUser(this.user);
-    this.registrationForm.reset();
-  }
-  addUser(user){
-    let users = [];
-    if(localStorage.getItem('Users')){
-      users = JSON.parse(localStorage.getItem('Users'));
-      users = [user, ...users];
-    }else{
-      users = [user];
+    this.userSubmitted = true;
+    if(this.registrationForm.valid){
+      this.user = Object.assign(this.user, this.registrationForm.value);
+      this.userService.addUser(this.user);
+      this.registrationForm.reset();
+      this.userSubmitted = false;
     }
-    localStorage.setItem('Users', JSON.stringify(users));
   }
+
 
 }
