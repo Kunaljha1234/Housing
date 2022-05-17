@@ -58,6 +58,10 @@ export class UserRegistrationComponent implements OnInit {
       this.userService.addUser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
+      alertyfy.success("Successfully registered");
+    }else{
+      alertyfy.error("Registration failed");
+
     }
   }
   userData(): User{
