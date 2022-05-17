@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class UserRegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
+  user: any = {};
   constructor() { }
 
   ngOnInit() {
@@ -46,7 +47,20 @@ export class UserRegistrationComponent implements OnInit {
     return this.registrationForm.get('mobile') as FormControl
   }
   onSubmit(){
-    console.log(this.registrationForm);
+    console.log(this.registrationForm.value);
+    this.user = Object.assign(this.user, this.registrationForm.value);
+    this.addUser(this.user);
+    this.registrationForm.reset();
+  }
+  addUser(user){
+    let users = [];
+    if(localStorage.getItem('Users')){
+      users = JSON.parse(localStorage.getItem('Users'));
+      users = [user, ...users];
+    }else{
+      users = [user];
+    }
+    localStorage.setItem('Users', JSON.stringify(users));
   }
 
 }
