@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,17 +11,21 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private alertify: AlertifyService,
+              private router: Router) { }
 
   ngOnInit() {
   }
   onLogin(loginForm: NgForm){
     console.log(loginForm.value);
-    const user = this.authService.authUser(loginForm.value);
-    if(user){
-      console.log('login successful');
+    const token = this.authService.authUser(loginForm.value);
+    if(token){
+      localStorage.setItem('token', token.userName)
+      this.alertify.success("Welcome");
+      this.router.navigate(['/']);
     }else{
-      console.log('login not successful')
+      this.alertify.error('Username or password is wrong');
     }
 
   }
