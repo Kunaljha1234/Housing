@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/model/User';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import * as alertyfy from 'alertifyjs';
 
 @Component({
   selector: 'app-user-registration',
@@ -10,7 +12,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class UserRegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
-  user: any = {};
+  user: User;
   userSubmitted: boolean;
   constructor(private userService: UserServiceService) { }
 
@@ -52,10 +54,18 @@ export class UserRegistrationComponent implements OnInit {
     console.log(this.registrationForm.value);
     this.userSubmitted = true;
     if(this.registrationForm.valid){
-      this.user = Object.assign(this.user, this.registrationForm.value);
-      this.userService.addUser(this.user);
+      // this.user = Object.assign(this.user, this.registrationForm.value);
+      this.userService.addUser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
+    }
+  }
+  userData(): User{
+    return this.user = {
+      userName: this.userName.value,
+      email: this.email.value,
+      password: this.password.value,
+      mobile: this.mobile.value
     }
   }
 
