@@ -32,7 +32,7 @@
           </li> -->
           <div *ngIf="loggedIn()" class="dropdown " dropdown>
             <a href="#" class="dropdown-toggle text-light mx-5" dropdownToggle (click)="false">
-              Welcome
+              Welcome {{loggedinUser}}
             </a>
             <div class="dropdown-menu " *dropdownMenu>
               <a href="#" class="dropdown-item">
