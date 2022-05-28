@@ -1,6 +1,6 @@
 [{
   "Id":1,
-  "Name": "Kunal's",
+  "Name": "Birla",
   "SellRent": 1,
   "Type": "House",
   "Price": 120000,
@@ -8,7 +8,7 @@
 },
 {
   "Id":2,
-  "Name": "Aakash's",
+  "Name": "Mortan",
   "SellRent": 1,
   "Type": "House",
   "Price": 134000,
@@ -16,7 +16,7 @@
 },
 {
   "Id":3,
-  "Name": "Vaibhav's",
+  "Name": "Nilaya",
   "SellRent": 2,
   "Type": "House",
   "Price": 220000,
@@ -24,17 +24,17 @@
 },
 {
   "Id":4,
-  "Name": "Pratyush's",
+  "Name": "Mannat",
   "SellRent": 2,
-  "Type": "House",
+  "Type": "Villa",
   "Price": 103400,
   "Image": "prop-4"
 },
 {
   "Id":5,
-  "Name": "Anil's",
+  "Name": "Versova",
   "SellRent": 1,
-  "Type": "House",
+  "Type": "Villa",
   "Price": 180000,
   "Image": "prop-5"
 
